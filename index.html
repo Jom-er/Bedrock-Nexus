@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bedrock Nexus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .top-nav {
+      background-color: #1d1d1d;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .top-nav h3 a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #333;
+      color: #4CAF50;
+    }
+
+    .main-content {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 24px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-content h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #222;
+      border-bottom: 3px solid #4CAF50;
+      padding-bottom: 5px;
+    }
+
+    .main-content section {
+      margin-top: 40px;
+    }
+
+    .main-content h3 {
+      font-size: 1.4rem;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    .main-content p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .footer {
+      background-color: #1d1d1d;
+      color: #bbb;
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.95rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-top: 10px;
+      }
+
+      .main-content {
+        padding: 20px;
+        margin: 0 10px;
+      }
+
+      .top-nav h3 {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-nav h3 a {
+        font-size: 1.3rem;
+      }
+
+      .main-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .main-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .main-content p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <h3><a href="./index.html">Bedrock Nexus</a></h3>
+    <nav class="nav-links">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./pages/addons.html">Addons</a>
+      <a href="./pages/wiki.html">Wiki</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2>Welcome to Bedrock Nexus</h2>
+    <p>Your ultimate destination for Minecraft Bedrock Edition addons, scripting knowledge, and tutorials crafted by and for the community.</p>
+
+    <section id="addons">
+      <h3>Explore Addons</h3>
+      <p>Browse a growing collection of custom weapons, mobs, blocks, and more. Our curated addon library gives you inspiration and tools to elevate your gameplay.</p>
+    </section>
+
+    <section id="wiki">
+      <h3>Learn from the Wiki</h3>
+      <p>Our detailed wiki helps you understand how addons are structured, from behavior packs to resource packs and the Minecraft Script API. Perfect for both beginners and advanced creators.</p>
+    </section>
+
+    <section id="tutorials">
+      <h3>Watch Tutorials</h3>
+      <p>Master addon creation through professional tutorials and community video guides. Whether you're adding new biomes or scripting entities, we’ve got you covered.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bedrock Nexus. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

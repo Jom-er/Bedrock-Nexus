@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copper Gear Wiki</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    .top-nav, .footer {
+      background-color: #1d1d1d;
+      color: #fff;
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .top-nav {
+      top: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumbs {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .breadcrumbs a {
+      color: #ccc;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+      color: #4CAF50;
+    }
+
+    .breadcrumbs span {
+      margin: 0 6px;
+      color: #999;
+    }
+
+    .footer {
+      bottom: 0;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      background: #fff;
+      padding: 30px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #4CAF50;
+      margin-top: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #388e3c;
+    }
+
+    .recipe-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .recipe-category {
+      flex: 1 1 45%;
+    }
+
+    .recipe-category h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .image-center {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .image-center img {
+      width: 80%;
+      border: 1px solid #999;
+      border-radius: 6px;
+      padding: 2px;
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .recipe-category {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-nav">
+    <h3 style="margin: 0;"><a href="./../../index.html" style="color: #4CAF50; text-decoration: none;">Bedrock Nexus</a></h3>
+    <nav class="breadcrumbs">
+      <a href="./../../index.html">Home</a><span>&gt;</span>
+      <a href="./../wiki.html">Wiki</a><span>&gt;</span>
+      <span>Verdant Gear [Original] Addon</span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Verdant Gear [Original] Addon</h1>
+
+    <h2>Crafting Recipes</h2>
+    <div class="recipe-section">
+      <div class="recipe-category">
+        <h3>Tools</h3>
+        <label for="toolSelect">Select a tool recipe:</label>
+        <select id="toolSelect" onchange="updateImage('toolSelect', 'toolImage')">
+          <option value="./images/verdant_gear_recipes/tools/copper_sword.png">Copper Sword</option>
+          <option value="./images/verdant_gear_recipes/tools/copper_pickaxe.png">Copper Pickaxe</option>
+          <option value="./images/verdant_gear_recipes/tools/copper_axe.png">Copper Axe</option>
+          <option value="./images/verdant_gear_recipes/tools/copper_shovel.png">Copper Shovel</option>
+          <option value="./images/verdant_gear_recipes/tools/copper_hoe.png">Copper Hoe</option>
+        </select>
+        <div class="image-center">
+          <img id="toolImage" src="./images/verdant_gear_recipes/tools/copper_sword.png" alt="Tool Recipe" />
+        </div>
+      </div>
+
+      <div class="recipe-category">
+        <h3>Armor</h3>
+        <label for="armorSelect">Select an armor recipe:</label>
+        <select id="armorSelect" onchange="updateImage('armorSelect', 'armorImage')">
+          <option value="./images/verdant_gear_recipes/armors/copper_helmet.png">Copper Helmet</option>
+          <option value="./images/verdant_gear_recipes/armors/copper_chestplate.png">Copper Chestplate</option>
+          <option value="./images/verdant_gear_recipes/armors/copper_leggings.png">Copper Leggings</option>
+          <option value="./images/verdant_gear_recipes/armors/copper_boots.png">Copper Boots</option>
+        </select>
+        <div class="image-center">
+          <img id="armorImage" src="./images/verdant_gear_recipes/armors/copper_helmet.png" alt="Armor Recipe" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Stats</h2>
+    <ul>
+      <li>Tools offer durability slightly above stone but lower than iron.</li>
+      <li>Armor provides defense between gold and iron.</li>
+      <li>Balanced for early-game survival with accessible crafting recipes.</li>
+    </ul>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="./../wiki.html" class="download-button">Return</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bedrock Nexus. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function updateImage(selectId, imageId) {
+      const select = document.getElementById(selectId);
+      const image = document.getElementById(imageId);
+      image.src = select.value;
+    }
+  </script>
+</body>
+</html>
