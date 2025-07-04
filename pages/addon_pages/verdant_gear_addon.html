@@ -17,7 +17,7 @@
       background-color: #f4f4f4;
       color: #333;
       line-height: 1.6;
-      padding-top: 80px;
+      padding-top: 100px;
       padding-bottom: 80px;
     }
 
@@ -37,123 +37,9 @@
       z-index: 1000;
     }
 
-    .top-nav h3 a {
-      color: #4CAF50;
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: 600;
+    .top-nav img {
+      height: 40px;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #ccc;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 6px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background-color: #333;
-      color: #4CAF50;
-    }
-
-    .main-content {
-      max-width: 960px;
-      margin: auto;
-      padding: 30px 24px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .main-content h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #222;
-      border-bottom: 3px solid #4CAF50;
-      padding-bottom: 5px;
-    }
-
-    .main-content section {
-      margin-top: 30px;
-    }
-
-    .main-content h3 {
-      font-size: 1.4rem;
-      color: #4CAF50;
-      margin-bottom: 20px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content h4 {
-      margin-bottom: 5px;
-      font-size: 1.1rem;
-      color: #388e3c;
-    }
-
-    .card-content p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: flex-end;
-      padding: 10px 15px;
-      background-color: #f1f1f1;
-    }
-
-    .card-footer a {
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .card-footer a:hover {
-      background-color: #388e3c;
-    }
-
-    .footer {
-      background-color: #1d1d1d;
-      color: #bbb;
-      text-align: center;
-      padding: 1.2rem;
-      font-size: 0.95rem;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-
 
     .breadcrumbs {
       font-size: 0.9rem;
@@ -175,12 +61,6 @@
     .breadcrumbs span {
       margin: 0 6px;
       color: #999;
-    }
-
-    .footer {
-      bottom: 0;
-      text-align: center;
-      padding: 1rem;
     }
 
     .container {
@@ -217,10 +97,15 @@
 
     .features h3 {
       color: #4CAF50;
+      margin-bottom: 10px;
     }
 
     .features ul {
       padding-left: 20px;
+    }
+
+    .features ul li {
+      margin-bottom: 6px;
     }
 
     .download-button {
@@ -236,12 +121,64 @@
     .download-button:hover {
       background-color: #388e3c;
     }
-  </style>
 
+    .footer {
+      background-color: #1d1d1d;
+      color: #bbb;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .breadcrumbs {
+        margin-top: 10px;
+        font-size: 0.85rem;
+        width: 100%;
+      }
+
+      .container {
+        margin: 0 10px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .download-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .breadcrumbs {
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .meta {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="top-nav">
-      <a href="./../../index.html"><img src="./../../assets/website_image_white.png" alt="Bedrock Nexus Logo" style="height: 40px;"></a>
+    <a href="./../../index.html"><img src="./../../assets/website_image_white.png" alt="Bedrock Nexus Logo"></a>
     <nav class="breadcrumbs">
       <a href="./../../index.html">Home</a><span>&gt;</span>
       <a href="./../addons.html">Addons</a><span>&gt;</span>
@@ -271,8 +208,8 @@
       </ul>
     </section>
 
-    <a href="./addon_files/Verdant Gear [Original].mcaddon" class="download-button" download="Verdant Gear [Original].mcaddon">Download Addon</a>
-    <br><br>
+    <a href="./addon_files/Verdant Gear [Original].mcaddon" class="download-button" download>Download Addon</a>
+
     <div style="text-align: center; margin-top: 20px;">
       <a href="./../addons.html" class="download-button">Return</a>
     </div>

@@ -150,16 +150,78 @@
       background-color: #fff;
     }
 
+    /* Responsive Enhancements */
     @media (max-width: 768px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .breadcrumbs {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 0.85rem;
+        word-wrap: break-word;
+      }
+
+      .container {
+        padding: 20px 16px;
+        margin: 0 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .download-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+
+      select {
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      .image-center img {
+        width: 100%;
+        max-width: 320px;
+      }
+
       .recipe-category {
         flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .breadcrumbs {
+        font-size: 0.8rem;
+      }
+
+      .download-button {
+        width: 100%;
+        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
   <header class="top-nav">
-      <a href="./../../index.html"><img src="./../../assets/website_image_white.png" alt="Bedrock Nexus Logo" style="height: 40px;"></a>
+    <a href="./../../index.html"><img src="./../../assets/website_image_white.png" alt="Bedrock Nexus Logo" style="height: 40px;"></a>
     <nav class="breadcrumbs">
       <a href="./../../index.html">Home</a><span>&gt;</span>
       <a href="./../wiki.html">Wiki</a><span>&gt;</span>

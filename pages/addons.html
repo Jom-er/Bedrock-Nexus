@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="./../assets/website_image_black.png" type="image/png">
-  <title>Bedrock Addons</title>
+  <title>Bedrock Addons - Addons</title>
   <style>
     * {
       margin: 0;
@@ -94,7 +94,7 @@
 
     .card-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
@@ -153,11 +153,53 @@
       left: 0;
       right: 0;
     }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 10px;
+      }
+
+      .main-content {
+        padding: 20px;
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .main-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .card-content h4 {
+        font-size: 1rem;
+      }
+
+      .card-content p {
+        font-size: 0.9rem;
+      }
+
+      .card-footer a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="top-nav">
-      <a href="./../index.html"><img src="./../assets/website_image_white.png" alt="Bedrock Nexus Logo" style="height: 40px;"></a>
+    <a href="./../index.html"><img src="./../assets/website_image_white.png" alt="Bedrock Nexus Logo" style="height: 40px;"></a>
     <nav class="nav-links">
       <a href="../index.html">Home</a>
       <a href="addons.html" class="active">Addons</a>
