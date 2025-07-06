@@ -215,18 +215,38 @@
       <h3>My Addons</h3>
       <div class="card-grid">
         <div class="card">
-          <div class="card-content">
-            <h4>Verdant Gear [Original] Addon</h4>
-            <p>JomGamingPH – Published on July 3, 2025</p>
-            <p>Step into a world where time shapes your gear—evolving tools and armor through four natural aging stages...</p>
+          <div class="card-content" id="copper_equiments_addon">
+            <h4>Copper Equipments [Original] Addon</h4>
+            <p id="copper-addon-date">JomGamingPH – Published on <span id="release-date-copper"></span></p>
+            <p>This addon adds a full set of copper equipment to Minecraft Bedrock Edition, including copper tools and armor...</p>
           </div>
           <div class="card-footer">
-            <a href="./addon_pages/verdant_gear_addon.html">See more</a>
+            <a href="./addon_pages/copper_equiments_addon.html">See more</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+  const addonKey = "copper_equipments_release_date";
+  const releaseDateSpan = document.getElementById("release-date-copper");
+
+  function formatDate(dateObj) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return dateObj.toLocaleDateString(undefined, options);
+  }
+
+  let savedDate = localStorage.getItem(addonKey);
+  if (!savedDate) {
+    const today = new Date();
+    savedDate = today.toISOString(); 
+    localStorage.setItem(addonKey, savedDate);
+  }
+
+  const releaseDate = new Date(savedDate);
+  releaseDateSpan.textContent = formatDate(releaseDate);
+</script>
 
   <footer class="footer">
     <p>&copy; 2025 Bedrock Nexus. All rights reserved.</p>

@@ -1,0 +1,24 @@
+{
+  "name": "bedrock-nexus",
+  "version": "1.0.0",
+  "description": "It contents a Minecraft Bedrock Edition Addon and Wiki from JomGamingPH Youtuber",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jom-er/Bedrock-Nexus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jom-er/Bedrock-Nexus/issues"
+  },
+  "homepage": "https://github.com/Jom-er/Bedrock-Nexus#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
