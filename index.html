@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedrock Nexus - Minecraft Bedrock Edition Hub</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the 'Inter' font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Ensure the body takes full viewport height and allows flex column layout */
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* Added padding-top and padding-bottom to the main content to prevent it from being hidden behind sticky header/footer */
+        .main-content-padding {
+            padding-top: 64px;
+            /* Adjust based on header height (approx p-4 + content) */
+            padding-bottom: 64px;
+            /* Adjust based on footer height (approx p-6) */
+        }
+
+        /* Style for the active navigation link (Home page) */
+        .link-active {
+            color: #06b6d4;
+            /* Use bedrock-accent color (Cyan 500) */
+            font-weight: 700;
+            /* Bold font weight */
+            text-shadow: 0 0 5px rgba(6, 182, 212, 0.7);
+            /* Subtle glow effect */
+        }
+    </style>
+    <!-- Custom Tailwind Configuration for a Minecraft dark theme with a cyan accent -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Dark mode base colors
+                        'bedrock-dark': '#0f172a', // Slate 900
+                        'bedrock-medium': '#1e293b', // Slate 800
+
+                        // New Accent Color (Cyan for digital/modern feel)
+                        'bedrock-accent': '#06b6d4', // Cyan 500
+
+                        // Light text color
+                        'bedrock-light': '#f1f5f9', // Slate 100
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-bedrock-dark text-bedrock-light flex flex-col antialiased">
+
+    <!-- Header & Navigation - Made sticky top and added z-30 for always-on-top -->
+    <header class="p-4 bg-bedrock-medium shadow-lg sticky top-0 z-30 w-full">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <h1 class="text-2xl font-extrabold text-bedrock-accent tracking-wider">
+                Bedrock Nexus
+            </h1>
+            <!-- Desktop Navigation (visible on screen size 'sm' and up) -->
+            <nav class="hidden sm:flex space-x-6 text-sm font-medium">
+                <!-- 'Home' link now has the 'link-active' class -->
+                <a href="./index.html" class="hover:text-bedrock-accent transition duration-200 link-active">Home</a>
+                <a href="./downloads.html" class="hover:text-bedrock-accent transition duration-200">Downloads</a>
+                <a href="./wikis.html" class="hover:text-bedrock-accent transition duration-200">Wiki</a>
+            </nav>
+
+            <!-- Mobile Toggle Button (hidden on screen size 'sm' and up) -->
+            <button id="mobile-menu-button" class="sm:hidden text-bedrock-light focus:outline-none">
+                <!-- Hamburger Icon (simple inline SVG) - Added IDs for dynamic path switching -->
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="menu-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Content (hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden sm:hidden px-4 pt-2 pb-4 space-y-2 bg-bedrock-medium border-t border-gray-700">
+            <!-- 'Home' link now has the 'link-active' class -->
+            <a href="./index.html"
+                class="block text-bedrock-light hover:text-bedrock-accent transition duration-200 py-1 link-active">Home</a>
+            <a href="./downloads.html"
+                class="block text-bedrock-light hover:text-bedrock-accent transition duration-200 py-1">Downloads</a>
+            <a href="./wikis.html"
+                class="block text-bedrock-light hover:text-bedrock-accent transition duration-200 py-1">Wiki</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Added padding for sticky elements -->
+    <main class="flex-grow main-content-padding">
+
+        <!-- Hero Section - Fully responsive text scaling -->
+        <section class="py-16 sm:py-20 text-center bg-bedrock-dark">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <!-- Text sizes adjusted for better scaling on small devices (text-4xl on mobile, md:text-5xl on tablet, lg:text-6xl on desktop) -->
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
+                    Your Central Hub for Minecraft Bedrock Resources
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-400 mb-8">
+                    Download the best community-created Add-ons, Texture Packs, Worlds, and Mods. Enhance your game
+                    across all Bedrock Edition platforms.
+                </p>
+                <!-- Removed the "Explore Bedrock Downloads" button as requested -->
+            </div>
+        </section>
+
+        <!-- Installation Guide Section -->
+        <section class="py-10 sm:py-16 bg-bedrock-medium border-t border-b border-gray-700">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <h3 class="text-2xl sm:text-3xl font-bold text-center mb-10 text-bedrock-accent">Add-on Installation
+                    Guide</h3>
+                <p class="text-center text-gray-300 mb-8">Follow these three simple steps to enhance your game with any
+                    Bedrock Nexus download!</p>
+
+                <ol class="space-y-6 sm:space-y-8">
+                    <!-- Step 1: Download -->
+                    <li
+                        class="flex items-start bg-bedrock-dark p-4 sm:p-6 rounded-xl shadow-xl border-l-4 border-bedrock-accent">
+                        <span
+                            class="text-xl sm:text-2xl font-black text-bedrock-accent mr-4 mt-1 flex-shrink-0 w-8 text-center">01</span>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-semibold mb-2">Download the Add-on File (.mcaddon)</h4>
+                            <p class="text-gray-400 text-sm sm:text-base">Locate the download link on our site. The
+                                files are usually a single file with the extension <code>.mcaddon</code> (or
+                                <code>.mcpack</code> for resource packs). Save it to a location on your device, like
+                                your Downloads folder.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 2: Open -->
+                    <li
+                        class="flex items-start bg-bedrock-dark p-4 sm:p-6 rounded-xl shadow-xl border-l-4 border-bedrock-accent">
+                        <span
+                            class="text-xl sm:text-2xl font-black text-bedrock-accent mr-4 mt-1 flex-shrink-0 w-8 text-center">02</span>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-semibold mb-2">Open the File to Import</h4>
+                            <p class="text-gray-400 text-sm sm:text-base">On most devices (Windows 10+, Mobile), simply
+                                tap or double-click the downloaded file. This action will automatically launch Minecraft
+                                Bedrock Edition and begin the internal import process.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 3: Activate -->
+                    <li
+                        class="flex items-start bg-bedrock-dark p-4 sm:p-6 rounded-xl shadow-xl border-l-4 border-bedrock-accent">
+                        <span
+                            class="text-xl sm:text-2xl font-black text-bedrock-accent mr-4 mt-1 flex-shrink-0 w-8 text-center">03</span>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-semibold mb-2">Activate in Your World Settings</h4>
+                            <p class="text-gray-400 text-sm sm:text-base">Once the import succeeds, edit your existing
+                                or new Minecraft world. Go to the "Resource Packs" and/or "Behavior Packs" sections
+                                under the Add-Ons tab and activate the newly imported pack to apply it to your world.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Made sticky bottom and added z-30 -->
+    <footer
+        class="p-6 bg-bedrock-medium text-center text-xs text-gray-400 border-t border-bedrock-dark sticky bottom-0 z-30 w-full">
+        <div class="container mx-auto">
+            &copy; 2025 Bedrock Nexus. All rights reserved. | Powered by the Minecraft Bedrock Community.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle and Icon Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const menuPath = document.getElementById('menu-path');
+
+            // SVG Path definitions for switching the icon
+            const hamburgerPath = "M4 6h16M4 12h16m-7 6h7"; // Path for Hamburger
+            const closePath = "M6 18L18 6M6 6l12 12";     // Path for Close (X)
+
+            // Toggle the menu and switch the icon path
+            button.addEventListener('click', () => {
+                // Toggle the 'hidden' class on the menu
+                const isHidden = menu.classList.toggle('hidden');
+
+                // If the menu is now hidden, set the hamburger path. Otherwise, set the close path.
+                if (isHidden) {
+                    menuPath.setAttribute('d', hamburgerPath);
+                } else {
+                    menuPath.setAttribute('d', closePath);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
